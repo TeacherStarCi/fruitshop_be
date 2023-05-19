@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model fruit {
+  id       String @id @db.VarChar(5)
+  name     String @db.VarChar(50)
+  image    String @db.VarChar(50)
+  price    Float  @db.Float
+  quantity Int
+}
